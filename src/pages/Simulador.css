@@ -208,3 +208,54 @@
   height: 100% !important;
 }
 
+.analysis-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.analysis-card {
+  width: 95%;
+  max-width: 1200px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 30px;
+  backdrop-filter: blur(6px);
+  margin-bottom: 150px;
+}
+
+.analysis-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.analysis-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.analysis-table th {
+  background: #333;
+  color: #fff;
+  padding: 12px;
+  border: 1px solid #555;
+}
+
+.analysis-table td {
+  padding: 12px;
+  border: 1px solid #444;
+}
+
+.growth-positive {
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.growth-negative {
+  color: #ff5252;
+  font-weight: bold;
+}

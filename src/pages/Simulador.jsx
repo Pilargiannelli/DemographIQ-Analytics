@@ -3,6 +3,9 @@ import { loadPopulationData } from "../utils/loadPopulation";
 import { fitExponential, predict } from "../models/exponentialFit";
 import { useTranslation } from "react-i18next";
 
+import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
+
 import {
   LineChart,
   Line,
@@ -27,8 +30,6 @@ const COLORES = {
 const LAST_REAL = 2025;
 
 export default function Simulador() {
-
-  
   const { t } = useTranslation();
 
   const [data, setData] = useState(null);
@@ -65,18 +66,18 @@ export default function Simulador() {
         }
       } else {
         const proyeccion = predict(a, b, anio);
-        let poblacionProyectada = Math.round(proyeccion);
-        if (isNaN(poblacionProyectada) || poblacionProyectada < 1) {
-          poblacionProyectada = null;
-        }
-        serie.push({ anio, poblacion: poblacionProyectada, tipo: "proyectado", pais });
+        let valor = Math.round(proyeccion);
+        if (isNaN(valor) || valor < 1) valor = null;
+        serie.push({ anio, poblacion: valor, tipo: "proyectado", pais });
       }
     }
     return serie;
   };
 
   const combinarSeries = () => {
-    const years = [...new Set(Object.values(series).flat().map(s => s.anio))].sort((a, b) => a - b);
+    const years = [...new Set(Object.values(series).flat().map(s => s.anio))]
+      .sort((a, b) => a - b);
+
     return years.map((anio) => {
       const fila = { anio };
       Object.keys(series).forEach((pais) => {
@@ -84,7 +85,7 @@ export default function Simulador() {
         fila[pais] = punto ? punto.poblacion : null;
       });
       return fila;
-    }).filter(fila => fila.anio !== undefined);
+    });
   };
 
   const generarCurvas = () => {
@@ -106,13 +107,15 @@ export default function Simulador() {
   const getMaxPoblacion = () => {
     if (dataset.length === 0) return 1000000;
     let maxVal = 0;
-    dataset.forEach(dataPoint => {
-      Object.keys(dataPoint).forEach(key => {
-        if (key !== 'anio' && dataPoint[key] && dataPoint[key] > maxVal) {
-          maxVal = dataPoint[key];
+
+    dataset.forEach((row) => {
+      Object.keys(row).forEach((key) => {
+        if (key !== "anio" && row[key] && row[key] > maxVal) {
+          maxVal = row[key];
         }
       });
     });
+
     return maxVal * 1.15;
   };
 
@@ -124,6 +127,9 @@ export default function Simulador() {
     return ticks;
   };
 
+  // ============================================
+  // CUSTOM TOOLTIP (con error corregido)
+  // ============================================
   const CustomTooltip = ({ active, payload, label }) => {
     if (!active || !payload || payload.length === 0) return null;
 
@@ -133,7 +139,7 @@ export default function Simulador() {
       const pais = punto.dataKey;
       const poblacionActual = punto.value;
 
-      if (poblacionActual !== null && pais !== "anio") {
+      if (poblacionActual !== null) {
         const poblacionAnterior = getPreviousValue(pais, label);
         let crecimiento = null;
 
@@ -146,19 +152,23 @@ export default function Simulador() {
     });
 
     return (
-      <div style={{
-        background: "rgba(0,0,0,0.85)",
-        padding: "12px",
-        borderRadius: "8px",
-        color: "#fff",
-        border: "1px solid #555",
-      }}>
+      <div
+        style={{
+          background: "rgba(0,0,0,0.85)",
+          padding: "12px",
+          borderRadius: "8px",
+          color: "#fff",
+          border: "1px solid #555",
+        }}
+      >
         <strong>{t("simulator.year")} {label}</strong>
-        <hr style={{ borderColor: '#555', margin: '8px 0' }} />
+        <hr style={{ borderColor: "#555", margin: "8px 0" }} />
 
         {resultados.map((res) => (
-          <div key={res.pais} style={{ marginBottom: '5px' }}>
-            <span style={{ color: COLORES[res.pais], fontWeight: 'bold' }}>{res.pais}</span>
+          <div key={res.pais} style={{ marginBottom: "5px" }}>
+            <span style={{ color: COLORES[res.pais], fontWeight: "bold" }}>
+              {res.pais}
+            </span>
             <br />
             {t("simulator.population")}: {res.poblacion.toLocaleString()}
             {res.crecimiento !== null && (
@@ -182,11 +192,76 @@ export default function Simulador() {
     );
   };
 
+  // =======================================
+  // DESCARGA PDF DEL GRÁFICO
+  // =======================================
+  const exportPDF = () => {
+    const chart = document.getElementById("chart-container");
+
+    html2canvas(chart, { scale: 2, backgroundColor: "#1a1a1a" }).then((canvas) => {
+      const imgData = canvas.toDataURL("image/png");
+      const pdf = new jsPDF({
+        orientation: "landscape",
+        unit: "px",
+        format: "a4"
+      });
+
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+
+      pdf.addImage(imgData, "PNG", 0, 20, pdfWidth, pdfHeight);
+      pdf.save("simulador-poblacional.pdf");
+    });
+  };
+
+  // =====================================================
+  // NUEVOS CÁLCULOS — NO MODIFICAN EL SIMULADOR
+  // =====================================================
+  const calcularCrecimiento = () => {
+    if (!dataset || dataset.length === 0) return [];
+
+    const inicio = dataset.find((d) => d.anio === anioInicio);
+    const fin = dataset.find((d) => d.anio === anioFin);
+
+    if (!inicio || !fin) return [];
+
+    return paisesSeleccionados.map((pais) => {
+      const valorInicio = inicio[pais] ?? null;
+      const valorFin = fin[pais] ?? null;
+
+      if (valorInicio === null || valorFin === null) {
+        return {
+          pais,
+          inicio: null,
+          fin: null,
+          crecimientoAbs: null,
+          crecimientoPct: 0,
+        };
+      }
+
+      const crecimientoAbs = valorFin - valorInicio;
+      const crecimientoPct =
+        valorInicio > 0 ? (crecimientoAbs / valorInicio) * 100 : 0;
+
+      return {
+        pais,
+        inicio: valorInicio,
+        fin: valorFin,
+        crecimientoAbs,
+        crecimientoPct,
+      };
+    });
+  };
+
+  const resultadosCrec = calcularCrecimiento();
+
   return (
     <div className="simulador-page">
       <h1>{t("simulator.title")}</h1>
 
       <div className="sim-layout">
+
+        {/* LEFT CARD */}
         <div className="sim-left">
           <div className="sim-form">
 
@@ -225,17 +300,41 @@ export default function Simulador() {
               onChange={(e) => setAnioFin(Number(e.target.value))}
             />
 
-            <button onClick={generarCurvas}>{t("simulator.generate")}</button>
+            <button onClick={generarCurvas}>
+              {t("simulator.generate")}
+            </button>
+
+            <button
+              onClick={exportPDF}
+              style={{
+                marginTop: "12px",
+                padding: "10px 20px",
+                backgroundColor: "#444",
+                color: "white",
+                border: "none",
+                borderRadius: "6px",
+                cursor: "pointer",
+                fontWeight: "bold",
+                width: "100%",
+              }}
+            >
+              Descargar PDF del gráfico
+            </button>
+
           </div>
         </div>
 
+        {/* RIGHT CARD */}
         <div className="sim-right">
           {dataset.length > 0 && (
-            <div className="chart-box">
+            <div className="chart-box" id="chart-container">
               <h2>{t("simulator.chartTitle")}</h2>
 
               <ResponsiveContainer width="100%" height={650}>
-                <LineChart data={dataset} margin={{ top: 40, right: 60, left: 40, bottom: 50 }}>
+                <LineChart
+                  data={dataset}
+                  margin={{ top: 40, right: 60, left: 40, bottom: 50 }}
+                >
                   <CartesianGrid stroke="#333" strokeDasharray="4 4" opacity={0.5} />
 
                   <XAxis
@@ -257,19 +356,22 @@ export default function Simulador() {
 
                   <Tooltip content={<CustomTooltip />} activeDot={{ r: 6 }} />
 
-                  <ReferenceArea x1={anioInicio} x2={anioFin} fill="#ffb766" fillOpacity={0.15} />
+                  <ReferenceArea
+                    x1={anioInicio}
+                    x2={anioFin}
+                    fill="#ffb766"
+                    fillOpacity={0.15}
+                  />
 
                   {Object.keys(series).map((pais, index) => (
                     <Line
                       key={pais}
                       type="monotone"
                       dataKey={pais}
-                      name={pais}
                       stroke={COLORES[pais]}
                       strokeWidth={4}
                       dot={false}
                       isAnimationActive={false}
-                      connectNulls={false}
                       activeDot={{
                         r: 8,
                         stroke: COLORES[pais],
@@ -285,6 +387,52 @@ export default function Simulador() {
           )}
         </div>
       </div>
+
+      {/* ===============================================
+          NUEVA CARD DE ANÁLISIS (NO MODIFICA NADA)
+      =============================================== */}
+      <div className="analysis-wrapper">
+        <div className="analysis-card">
+          <h2 className="analysis-title">📊 Análisis de Crecimiento Poblacional</h2>
+
+          {resultadosCrec.length === 0 ? (
+            <p>No hay datos para mostrar.</p>
+          ) : (
+            <table className="analysis-table">
+              <thead>
+                <tr>
+                  <th>País</th>
+                  <th>Población {anioInicio}</th>
+                  <th>Población {anioFin}</th>
+                  <th>Crec. Absoluto</th>
+                  <th>Crec. %</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                {resultadosCrec.map((row) => (
+                  <tr key={row.pais}>
+                    <td>{row.pais}</td>
+                    <td>{row.inicio?.toLocaleString() ?? "-"}</td>
+                    <td>{row.fin?.toLocaleString() ?? "-"}</td>
+                    <td>{row.crecimientoAbs?.toLocaleString() ?? "-"}</td>
+                    <td
+                      className={
+                        row.crecimientoAbs >= 0
+                          ? "growth-positive"
+                          : "growth-negative"
+                      }
+                    >
+                      {row.crecimientoPct.toFixed(2)}%
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
+        </div>
+      </div>
+
     </div>
   );
 }
