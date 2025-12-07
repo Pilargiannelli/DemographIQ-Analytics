@@ -1,5 +1,10 @@
 import "./Nosotros.css";
 import { useTranslation } from "react-i18next";
+import piliFoto from "../assets/equipo/pili.jpg";
+import berniFoto from "../assets/equipo/berni.jpg";
+import tomiFoto from "../assets/equipo/tomi.jpg";
+import martiFoto from "../assets/equipo/marti.jpg";
+
 
 export default function Nosotros() {
   const { t } = useTranslation();
