@@ -1,0 +1,350 @@
+/* === SECCIÓN GENERAL === */
+.contact-section {
+  padding: 70px 40px;
+  background: linear-gradient(135deg, #030305, #060413, #0d0d0d);
+  color: #F5E9D2;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../assets/mercosur-bg.png") center/55% no-repeat;
+  opacity: 0.12;
+  filter: brightness(1.45) blur(2px);
+  pointer-events: none;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.contact-container {
+  display: flex;
+  gap: 60px;
+  max-width: 1300px;
+  width: 100%;
+  animation: fadeInScale 0.9s ease-out forwards;
+}
+
+/* === CARD DE INFORMACIÓN === */
+.contact-info {
+  background: rgba(255,255,255,0.06);
+  padding: 40px;
+  border-radius: 20px;
+  width: 40%;
+  height: fit-content;
+  border: 1px solid rgba(255,255,255,0.15);
+
+  box-shadow:
+    0px 10px 30px rgba(0,0,0,0.4),
+    0 0 25px rgba(138, 63, 252, 0.15);
+
+  backdrop-filter: blur(8px);
+
+  /* borde glow */
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-info::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 2px;
+  background: linear-gradient(135deg, #9b5dff, #ff8d50);
+  -webkit-mask: 
+      linear-gradient(#000 0 0) content-box, 
+      linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  z-index: -1;
+}
+
+.contact-info h2 {
+  font-size: 34px;
+  margin-bottom: 10px;
+  background: linear-gradient(
+    120deg,
+    #F5E9D2,
+    #C7B6F2,
+    #8C6DD8,
+    #A04D17,
+    #F5E9D2
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: titleFlow 6s ease-in-out infinite;
+
+}
+
+.contact-info p {
+  opacity: 0.9;
+}
+
+/* INFO ITEMS */
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 22px 0;
+  font-size: 18px;
+}
+
+.info-item span {
+  font-size: 22px;
+  background: linear-gradient(120deg, #ff7a5c, #caa2ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* === FORMULARIO === */
+.contact-form {
+  flex: 1;
+  background: rgba(255,255,255,0.05);
+  padding: 45px;
+  border-radius: 20px;
+
+  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(7px);
+
+  box-shadow:
+    0px 10px 30px rgba(0,0,0,0.35),
+    0 0 22px rgba(255,140,70,0.12);
+
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-form::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 2px;
+  background: linear-gradient(135deg, #caa2ff, #ff8d50);
+  -webkit-mask: 
+      linear-gradient(#000 0 0) content-box, 
+      linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  z-index: -1;
+}
+
+.contact-form h3 {
+  font-size: 26px;
+  margin-bottom: 25px;
+
+  background: linear-gradient(
+    120deg,
+    #F5E9D2,
+    #C7B6F2,
+    #8C6DD8,
+    #A04D17,
+    #F5E9D2
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: titleFlow 6s ease-in-out infinite;
+
+}
+
+/* === INPUTS === */
+.input-group {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 16px 14px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 12px;
+  color: #F5E9D2;
+  font-size: 16px;
+  transition: 0.25s ease;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  border-color: #ff8d50;
+  box-shadow: 0 0 12px rgba(255,140,70,0.4);
+  outline: none;
+}
+
+/* Label flotante */
+.input-group label {
+  position: absolute;
+  left: 16px;
+  top: 14px;
+  color: rgba(255,255,255,0.6);
+  transition: 0.3s ease;
+  pointer-events: none;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label,
+.input-group textarea:focus + label,
+.input-group textarea:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 10px;
+  font-size: 13px;
+  color: #ff8d50;
+  background: #0f0b18;
+  padding: 0 6px;
+}
+
+/* === BOTÓN === */
+.contact-btn {
+  width: 100%;
+  padding: 15px 0;
+  background: linear-gradient(120deg, #ff8d50, #ff6a3a);
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.25s ease;
+  box-shadow: 0 6px 16px rgba(255,140,70,0.35);
+}
+
+.contact-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(255,140,70,0.55);
+}
+
+/* === MENSAJE DE ÉXITO === */
+.success-msg {
+  margin-top: 20px;
+  background: rgba(20,35,20,0.6);
+  border-left: 4px solid #4CAF50;
+  padding: 14px 18px;
+  border-radius: 10px;
+  font-size: 16px;
+  color: #c0ffcf;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: fadeIn 0.4s ease;
+}
+
+.check {
+  font-size: 22px;
+}
+
+/* === ANIMACIONES === */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(.97); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* Estados de validación */
+.input-group input.valid,
+.input-group textarea.valid {
+  border-color: #4CAF50 !important;
+  box-shadow: 0 0 12px rgba(76, 175, 80, 0.35);
+}
+
+.input-group input.invalid,
+.input-group textarea.invalid {
+  border-color: #ff4d4d !important;
+  box-shadow: 0 0 12px rgba(255, 77, 77, 0.35);
+}
+
+/* Resumen del paso final */
+.summary-box {
+  background: rgba(255,255,255,0.06);
+  padding: 22px 25px;
+  border-radius: 14px;
+  margin: 25px 0;
+  border: 1px solid rgba(255,255,255,0.12);
+
+  /* 🔥 FIX DEL PROBLEMA */
+  width: 100%;
+  max-width: 100%;
+  overflow-wrap: break-word;   /* fuerza salto */
+  white-space: pre-wrap;        /* respeta saltos de línea */
+  word-break: break-word;       /* evita overflow */
+
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+
+.success-msg {
+  margin-top: 20px;
+  padding: 14px;
+  border-radius: 10px;
+  text-align: center;
+
+  background: rgba(46, 204, 113, 0.15);
+  border: 1px solid rgba(46, 204, 113, 0.4);
+  color: #2ecc71;
+
+  font-size: 16px;
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==== INSTAGRAM HIGHLIGHT GLOBAL ==== */
+
+.ig-highlight,
+.ig-highlight-nos,
+.contact-ig-box {
+  margin-top: 22px;
+  padding: 16px 20px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 12px rgba(160, 77, 23, 0.25);
+  text-align: left;
+}
+
+.ig-title {
+  font-size: 14px;
+  opacity: 0.85;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.ig-button,
+.contact-ig-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 16px;
+  background: linear-gradient(120deg, #ff8d50, #caa2ff);
+  border-radius: 10px;
+  color: #0a0a0a;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  transition: 0.3s ease;
+}
+
+.ig-button:hover,
+.contact-ig-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(255, 140, 70, 0.45);
+}
+
+.ig-icon {
+  margin-right: 5px;
+}

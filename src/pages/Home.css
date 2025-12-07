@@ -1,0 +1,252 @@
+/* === GENERAL === */
+.home {
+  color: #F5E9D2;
+  background: linear-gradient(135deg, #030305, #060413, #0d0d0d);
+  overflow-x: hidden;
+}
+
+/* === HERO === */
+.hero {
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  padding: 0 40px;
+  background: linear-gradient(135deg, #030305, #060413, #0d0d0d);
+  background-size: 300% 300%;
+  animation: heroBG 18s ease-in-out infinite;
+}
+
+@keyframes heroBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Logo */
+.hero-logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.hero-logo {
+  width: 180px;
+  height: auto;
+  opacity: 0.95;
+  margin-bottom: 15px;
+  filter: drop-shadow(0px 4px 12px rgba(0,0,0,0.35));
+  transition: 0.25s ease;
+
+}
+
+.hero-logo:hover {
+  transform: scale(1.05);
+  opacity: 1;
+
+
+}
+
+/* Textos Hero */
+.hero-title {
+  font-size: 120px;
+  font-weight: 900;
+  margin-bottom: 20px;
+  background: linear-gradient(
+    120deg,
+    #F5E9D2,
+    #C7B6F2,
+    #8C6DD8,
+    #A04D17,
+    #F5E9D2
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: titleFlow 6s ease-in-out infinite;
+}
+
+.hero-subtitle {
+  font-size: 28px;
+  opacity: 0.85;
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+
+
+/* === Botón pequeño REAL === */
+.hero-btn.small {
+  padding: 18px 28px;
+  font-size: 18px;
+  border-radius: 20px;
+  background: #693410;
+  color: #1e0e25;
+  text-decoration: none;
+  font-weight: 600;
+
+  display: inline-block;
+  width: auto;
+  margin: 12px auto 0;
+
+  box-shadow: 0px 2px 8px rgba(160, 77, 23, 0.35);
+  transition: all .25s ease;
+}
+
+.hero-btn.small:hover {
+  background: #c06020;
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 14px rgba(160,77,23,0.45);
+}
+
+/* Animación logo */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Force inline */
+.hero a {
+  display: inline-block !important;
+  width: auto !important;
+}
+
+/* === QUE HACEMOS === */
+.que-hacemos {
+  padding: 70px 40px;
+  text-align: center;
+}
+
+.qh-item {
+  font-size: 22px;
+  margin: 18px 0;
+  opacity: 0.9;
+}
+
+/* === DIFERENCIALES === */
+.difs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  background: #15051d;
+
+  padding: 30px 40px 60px;
+  margin-top: -20px;
+}
+
+
+.dif-card {
+  padding: 40px;
+  border-radius: 20px;
+  background: rgba(152, 35, 17, 0.05);
+  border: 1px solid rgba(136, 93, 33, 0.12);
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.dif-card:hover {
+  transform: translateY(-6px);
+  border-color: #A04D17;
+}
+
+/* === DEMO === */
+.demo {
+  padding: 120px 40px;
+  text-align: center;
+  background: linear-gradient(135deg, #0c0817, #160e2e);
+}
+
+.demo-box h2 {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+.demo-btn {
+  margin-top: 25px;
+  display: inline-block;
+  padding: 12px 28px;
+  background: #A04D17;
+  color: #F5E9D2;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.demo-btn:hover {
+  background: #d16522;
+}
+
+/* === TRUST === */
+.trust {
+  padding: 90px 40px;
+  text-align: center;
+}
+
+.trust h2 {
+  font-size: 34px;
+  margin-bottom: 40px;
+  color: #9c7251;
+}
+
+/* Contenedor centrado */
+.trust-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Cards de logos - BASE (CORREGIDO) */
+.trust-card {
+  width: 180px;
+  height: 180px;
+  background-size: 90%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(255, 255, 255, 0.04);
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+}
+
+
+.trust-card:hover {
+  border-color: #A04D17;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(160, 77, 23, 0.35);
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .trust-card {
+    width: 120px;
+    height: 70px;
+  }
+}
+
+/* === DEFINICIÓN DE LOGOS CON URL (CSS Background Method) === */
+
+
+/* === CTA FINAL === */
+.cta-final {
+  padding: 100px 40px;
+  text-align: center;
+  margin-bottom: 80px;
+
+}
+
+.cta-final h2 {
+  margin-bottom: 15px;
+  font-size: 30px;
+  color: rgb(233, 222, 208);
+}
+
+.cta-final p {
+  font-size: 20px;
+  color: #aaa99a;
+}

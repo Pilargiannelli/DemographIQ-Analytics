@@ -1,0 +1,301 @@
+{
+  "menu": {
+    "home": "Inicio",
+    "simulator": "Simulador",
+    "services": "Servicios",
+    "cases": "Casos de Éxito",
+    "plans": "Planes",
+    "why": "Por qué elegirnos",
+    "about": "Nosotros",
+    "contact": "Contacto"
+  },
+
+  "casos": {
+    "title": "Casos de Éxito en el MERCOSUR",
+    "subtitle": "Organizaciones líderes confiaron en nuestras proyecciones demográficas para optimizar decisiones estratégicas, anticipar escenarios y mejorar planificación a gran escala.",
+
+    "c1_title": "Ministerio de Planificación - Brasil",
+    "c1_text": "Brasil necesitaba proyecciones consistentes para planificar obras de infraestructura urbana. Nuestros modelos permitieron identificar zonas de presión demográfica y priorizar inversiones.",
+    "c1_li1": "✔ Reducción del 18% en errores de asignación presupuestaria.",
+    "c1_li2": "✔ Regionalización de indicadores para 50 ciudades.",
+    "c1_li3": "✔ Escenarios de crecimiento proyectados hasta 2040.",
+
+    "c2_title": "YPF – División Expansión Argentina",
+    "c2_text": "YPF aplicó nuestro simulador para identificar corredores logísticos con crecimiento acelerado. La proyección poblacional permitió planificar nuevas estaciones estratégicas.",
+    "c2_li1": "✔ Aumento del 12% en eficiencia de rutas de abastecimiento.",
+    "c2_li2": "✔ Identificación de puntos calientes de demanda.",
+    "c2_li3": "✔ Optimización de inversión en 7 provincias.",
+
+    "c3_title": "Universidad de la República – Uruguay",
+    "c3_text": "La Udelar utilizó las proyecciones por rangos etarios para estimar matrícula futura, logrando planificar nuevos espacios, carreras prioritarias y distribución territorial.",
+    "c3_li1": "✔ Mejor asignación de presupuesto académico.",
+    "c3_li2": "✔ Plan de expansión universitaria a 2035.",
+    "c3_li3": "✔ Estandarización de análisis demográfico institucional.",
+
+    "c4_title": "Ministerio de Economía – Paraguay",
+    "c4_text": "El Ministerio necesitaba un sistema que integrara indicadores regionales del MERCOSUR. Nuestras herramientas permitieron desarrollar modelos comparativos y mejorar la asignación de políticas.",
+    "c4_li1": "✔ Creación de 14 indicadores regionales.",
+    "c4_li2": "✔ Implementación de modelos de proyección unificados.",
+    "c4_li3": "✔ Optimización de programas sociales.",
+
+    "c5_title": "FoodChain SA – Retail MERCOSUR",
+    "c5_text": "Esta cadena regional utilizó nuestras proyecciones para definir dónde abrir nuevas sucursales en Argentina, Brasil y Uruguay, basándose en tendencias demográficas.",
+    "c5_li1": "✔ 22 nuevas locaciones seleccionadas estratégicamente.",
+    "c5_li2": "✔ Análisis predictivo de demanda por región.",
+    "c5_li3": "✔ Expansión coordinada en tres países."
+  }, 
+
+  "home": {
+  "hero_title": "Claridad para decidir.",
+  "hero_subtitle": "La plataforma empresarial del MERCOSUR para proyectar el futuro con confianza.",
+  "hero_btn": "Explorar el simulador",
+
+  "qh1": "Convertimos información en claridad estratégica.",
+  "qh2": "Acompañamos decisiones de alto impacto.",
+  "qh3": "Diseñamos herramientas para instituciones y empresas.",
+  "qh4": "El futuro del MERCOSUR, visualizado al instante.",
+
+  "dif1_title": "Enfoque regional",
+  "dif1_text": "La única plataforma creada exclusivamente para el MERCOSUR.",
+  "dif2_title": "Experiencia premium",
+  "dif2_text": "Interfaz simple, elegante y diseñada para ejecutivos.",
+  "dif3_title": "Velocidad y solidez",
+  "dif3_text": "Resultados inmediatos para decisiones inmediatas.",
+
+  "demo_title": "Un simulador pensado para líderes.",
+  "demo_text": "Visual, simple y listo para usar. Sin complejidad, sin barreras.",
+  "demo_btn": "Probar simulador",
+
+  "trust_title": "Organizaciones que confían en nuestra plataforma",
+
+  "cta_title": "Decisiones claras comienzan con buena información.",
+  "cta_text": "Probá la herramienta que está transformando el análisis estratégico en el MERCOSUR."
+},
+
+"simulator": {
+  "title": "Simulador Demográfico",
+  "selectCountries": "Seleccionar países",
+  "startYear": "Año inicial",
+  "endYear": "Año final",
+  "generate": "Generar curva",
+  "chartTitle": "Curva poblacional (Reales + Proyección)",
+  "year": "Año",
+  "population": "Población",
+  "growthIndex": "Índice de Crecimiento"
+},
+
+"services": {
+  "hero_title": "Servicios diseñados para decisiones importantes",
+  "hero_text": "Soluciones empresariales para instituciones, gobiernos y organizaciones que necesitan entender el presente y anticipar el futuro del MERCOSUR.",
+
+  "card1_title": "Panel Ejecutivo",
+  "card1_text": "Una visión clara, ordenada y visual para comprender el contexto regional en segundos. Ideal para comités directivos y reuniones claves.",
+
+  "card2_title": "Informe Regional MERCOSUR",
+  "card2_text": "Un reporte integral con insights estratégicos para instituciones, empresas y organismos que necesitan comprender tendencias regionales.",
+
+  "card3_title": "Proyecciones Inmediatas",
+  "card3_text": "Resultados listos en segundos. Pensado para equipos que trabajan con urgencia y requieren certezas operativas.",
+
+  "card4_title": "Soporte para Gobiernos",
+  "card4_text": "Acompañamos procesos de planificación pública y decisiones de impacto territorial con información precisa y visualmente clara.",
+
+  "card5_title": "Consultoría para Empresas",
+  "card5_text": "Asistencia estratégica para compañías que buscan expandirse, optimizar operaciones o comprender el panorama regional.",
+
+  "card6_title": "Análisis Personalizado",
+  "card6_text": "Desarrollos a medida para organizaciones que requieren una visión ajustada a su realidad y objetivos.",
+
+  "cta_title": "Prepará tu organización para dar el siguiente paso.",
+  "cta_text": "Agendá una reunión con nuestro equipo y descubrí cómo podemos acompañarte.",
+  "cta_btn": "Solicitar asesoramiento"
+},
+
+"pricing": {
+  "title": "Planes y Precios",
+  "subtitle": "Seleccioná el plan que mejor se adapte a tu organización.",
+
+  "basic_title": "Plan Básico",
+  "basic_price": "$49 / mes",
+  "basic_benefits": [
+    "Acceso al simulador MERCOSUR",
+    "Proyecciones por país",
+    "Gráficos básicos",
+    "Descarga PNG"
+  ],
+
+  "pro_title": "Plan Profesional",
+  "pro_price": "$129 / mes",
+  "pro_benefits": [
+    "Modelos LS avanzados",
+    "Reportes automáticos PDF",
+    "Comparación entre países",
+    "Soporte prioritario"
+  ],
+
+  "inst_title": "Institucional",
+  "inst_price": "$249 / mes",
+  "inst_benefits": [
+    "Integración con datasets propios",
+    "API de proyecciones",
+    "Panel ejecutivo ampliado",
+    "Asistencia técnica especializada"
+  ],
+
+  "premium_title": "Premium / A medida",
+  "premium_price": "Consultar",
+  "premium_benefits": [
+    "Modelos totalmente personalizados",
+    "Asesoría demográfica 1:1",
+    "Informes trimestrales",
+    "Implementación corporativa"
+  ]
+},
+
+"checkout": {
+  "title": "Pago — Plan",
+  "subtitle": "Complete los datos de facturación para activar su plan.",
+  "fullName": "Nombre completo",
+  "email": "Email",
+  "country": "País",
+  "address": "Dirección",
+  "cardNumber": "Número de Tarjeta",
+  "expiration": "Vencimiento (MM/AA)",
+  "payBtn": "Confirmar Pago",
+  "success_title": "Pago Exitoso",
+  "success_text": "Tu plan ya está activo. Disfrutá de la plataforma.",
+  "alert_success": "Pago confirmado. ¡Gracias por confiar en Demosight Analytics!"
+},
+
+"about": {
+  "title": "Quiénes Somos",
+  "subtitle": "Un equipo dedicado a transformar datos poblacionales en decisiones estratégicas claras y confiables.",
+  
+  "history_title": "Nuestra Historia",
+  "history_text": "Nacimos con una visión simple: ofrecer una plataforma demográfica ágil, precisa y diseñada para quienes necesitan tomar decisiones reales en tiempo real.",
+
+  "team_intro": "Nuestro equipo está formado por profesionales comprometidos con el análisis, la estrategia y la comunicación clara.",
+
+  "role_strategy": "Directora de Análisis & Estrategia",
+  "role_executive": "Directora Ejecutiva",
+  "role_tech": "Director de Tecnología & Modelos Predictivos",
+  "role_ops": "Directora de Operaciones",
+
+  "values_title": "Nuestros Valores",
+  "value1_title": "Claridad",
+  "value1_text": "Simplificamos la información para que cualquier organización pueda interpretar datos estratégicos.",
+  "value2_title": "Compromiso",
+  "value2_text": "Trabajamos con responsabilidad y enfoque para ofrecer resultados confiables.",
+  "value3_title": "Innovación",
+  "value3_text": "Mejoramos continuamente la experiencia del usuario con herramientas modernas.",
+  "value4_title": "Excelencia",
+  "value4_text": "Nos guía un estándar corporativo con diseño profesional y visión integral del MERCOSUR."
+},
+
+"why": {
+  "title": "¿Por qué elegirnos?",
+  "subtitle": "La plataforma demográfica preferida por organizaciones que necesitan claridad, velocidad y precisión en todo el MERCOSUR.",
+
+  "card1_title": "Enfoque exclusivo en el MERCOSUR",
+  "card1_text": "No somos una herramienta genérica. Conocemos la región, su ritmo y sus desafíos reales. Por eso brindamos análisis que ayudan a gobiernos, empresas y universidades a tomar decisiones con impacto inmediato.",
+
+  "card2_title": "Información clara para decidir",
+  "card2_text": "Transformamos miles de datos en resultados simples, visuales y accionables. Nada técnico ni complejo: solo claridad para avanzar con seguridad.",
+
+  "card3_title": "Visualizaciones que impactan",
+  "card3_text": "Gráficos profesionales y comparaciones dinámicas que elevan cualquier reunión ejecutiva. Presentaciones impecables que comunican valor al instante.",
+
+  "card4_title": "Análisis comparativo inmediato",
+  "card4_text": "Descubrí en segundos cómo evoluciona cada país del MERCOSUR y detectá oportunidades estratégicas sin perder tiempo.",
+
+  "card5_title": "Reportes ejecutivos listos para usar",
+  "card5_text": "Exportá informes corporativos ideales para directivos, clientes, inversores y autoridades. Profesionales, ordenados y listos para presentar.",
+
+  "card6_title": "Experiencia simple y eficiente",
+  "card6_text": "Diseñada para obtener resultados en segundos. Sin complicaciones, sin curva de aprendizaje, sin procesos tediosos.",
+
+  "diff_title": "Nuestra ventaja competitiva",
+  "diff_text": "Ofrecemos una herramienta creada para quienes lideran, planifican y toman decisiones. Una solución visual, intuitiva y confiable con diseño empresarial y experiencia moderna.",
+  "diff_list": [
+    "Información fácil de interpretar",
+    "Gráficos profesionales para reuniones",
+    "Enfoque corporativo y orientado a resultados",
+    "Ideal para instituciones, empresas y entidades públicas del MERCOSUR"
+  ]
+},
+
+"contact": {
+  "title": "Contacto",
+  "subtitle": "Estamos para acompañarte en cada decisión estratégica.",
+  "hours": "Lunes a Viernes — 9 a 18 hs",
+
+  "step1_title": "Datos principales",
+  "step2_title": "Tu consulta",
+  "step3_title": "Confirmación",
+
+  "fullName": "Nombre completo",
+  "email": "Email",
+  "message": "Mensaje",
+
+  "error_message": "El mensaje debe tener al menos 10 caracteres.",
+  "next": "Siguiente",
+  "continue": "Continuar",
+  "review": "Revisá tus datos antes de enviar:",
+  "send": "Enviar consulta",
+  "success": "Consulta enviada correctamente"
+},
+
+"footer": {
+  "desc": "Plataforma empresarial de análisis poblacional para gobiernos, compañías y organizaciones.",
+  "contact_form": "Formulario de contacto",
+
+  "company": "Compañía",
+  "about": "Nosotros",
+  "why": "Por qué elegirnos",
+  "cases": "Casos de éxito",
+
+  "services": "Servicios",
+  "simulator": "Simulador",
+  "what_we_do": "Qué hacemos",
+  "pricing": "Planes y precios",
+
+  "legal": "Legal",
+  "terms": "Términos y condiciones",
+  "privacy": "Política de privacidad",
+  "data": "Uso de datos",
+
+  "source": "Datos oficiales — Elaboración propia."
+},
+
+"social": {
+  "followUs": "Seguinos en Instagram",
+  "igText": "Visualizaciones, datos estratégicos y tendencias del MERCOSUR todos los días.",
+  "visit": "Visitar Instagram",
+  "handle": "@demographiq"
+},
+
+"meta": {
+  "home": "DemographIQ Analytics | Inicio",
+  "simulator": "DemographIQ Analytics | Simulador",
+  "services": "DemographIQ Analytics | Servicios",
+  "why": "DemographIQ Analytics | Por qué elegirnos",
+  "about": "DemographIQ Analytics | Nosotros",
+  "contact": "DemographIQ Analytics | Contacto",
+  "pricing": "DemographIQ Analytics | Precios"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

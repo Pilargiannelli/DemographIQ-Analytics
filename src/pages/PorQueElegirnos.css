@@ -1,0 +1,167 @@
+.pq-section {
+  padding: 60px 60px;
+    background: linear-gradient(135deg, #030305, #060413, #0d0d0d);
+
+  background-size: 300% 300%;
+  animation: pqBG 15s ease-in-out infinite;
+  color: #F5E9D2;
+
+}
+
+@keyframes pqBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.pq-title {
+  text-align: center;
+  font-size: 46px;
+  font-weight: 900;
+  margin-bottom: 10px;
+
+  background: linear-gradient(
+    120deg,
+    #F5E9D2,
+    #C7B6F2,
+    #8C6DD8,
+    #A04D17,
+    #F5E9D2
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: titleFlow 6s ease-in-out infinite;
+}
+
+@keyframes titleGlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.pq-subtitle {
+  text-align: center;
+  opacity: 0.85;
+  max-width: 800px;
+  margin: 0 auto 60px;
+  font-size: 18px;
+}
+
+/* GRID */
+.pq-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  padding: 0 60px;
+  margin-top: 40px;
+  width: 100%;
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* CARDS */
+.pq-card {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 26px 24px; /* antes 35px 28px */
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  text-align: center;
+
+  /* ALTURA MÁS COMPACTA Y PAREJA */
+  min-height: 260px; /* antes 320px */
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 12px; /* menos separación interna */
+
+  /* Animación */
+  opacity: 0;
+  transform: translateY(40px) scale(0.9);
+  animation: cardEnter 0.7s ease-out forwards;
+}
+
+.pq-card:hover {
+  transform: translateY(-8px);
+  border-color: #A04D17;
+  box-shadow: 0px 8px 25px rgba(160, 77, 23, 0.45);
+}
+
+/* ICONOS */
+.pq-icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+/* BLOQUE DIFERENCIAL */
+.pq-diferencial {
+  margin-top: 80px;
+  background: rgba(255,255,255,0.03);
+  padding: 40px 35px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.07);
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.pq-diferencial h3 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.pq-diferencial ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.pq-diferencial li {
+  margin: 8px 0;
+  font-size: 16px;
+  color: #FF9A55;
+}
+
+.pq-card h3 {
+  margin-bottom: 6px; /* antes 12px */
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.pq-card p {
+  font-size: 15px;
+  line-height: 1.32;
+  opacity: 0.95;
+}
+
+
+@keyframes cardEnter {
+  0% { opacity: 0; transform: translateY(40px) scale(0.6); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.pq-card:nth-child(1) { animation-delay: 0.1s; }
+.pq-card:nth-child(2) { animation-delay: 0.25s; }
+.pq-card:nth-child(3) { animation-delay: 0.4s; }
+.pq-card:nth-child(4) { animation-delay: 0.55s; }
+.pq-card:nth-child(5) { animation-delay: 0.7s; }
+.pq-card:nth-child(6) { animation-delay: 0.85s; }
+
+@media (max-width: 1200px) {
+  .pq-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 750px) {
+  .pq-grid {
+    grid-template-columns: 1fr;
+    padding: 0 30px;
+  }
+}

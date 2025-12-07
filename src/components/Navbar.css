@@ -1,0 +1,107 @@
+/* === NAVBAR EMPRESARIAL – TRANSICIÓN VIOLETA → NEGRO NOTORIA === */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 18px 45px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+
+  /* Fondo animado con violeta MUY profundo y negro */
+  background: linear-gradient(
+    120deg,
+    #170F27,
+    #1F1531,
+    #2A1B44,
+    #3B2762,
+    #110B18,
+    #1F1531,
+    #170F27
+  );
+  background-size: 600% 600%;
+  animation: darkVioletFlow 12s ease-in-out infinite;
+
+  /* Efecto premium */
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0px 4px 18px rgba(0,0,0,0.55);
+}
+
+/* Animación más notoria y fluida */
+@keyframes darkVioletFlow {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 30% 50%; }
+  50% { background-position: 100% 50%; }
+  75% { background-position: 60% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* === LOGO === */
+.logo {
+  font-family: "Manrope", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #F5E9D2; /* crema elegante */
+  letter-spacing: 0.6px;
+}
+
+/* === LINKS === */
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #F5E9D2; /* crema */
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 500;
+  margin-left: 26px;
+  position: relative;
+  padding: 6px 2px;
+  transition: 0.3s ease;
+}
+
+/* Subrayado en naranja MUY oscuro */
+.nav-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: #A04D17; /* naranja oscuro */
+  transition: width 0.3s ease;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
+
+/* Hover premium */
+.nav-item:hover {
+  color: #A04D17; /* NARANJA OSCURO PROFESIONAL */
+  transform: translateY(-1px);
+}
+
+/* === SELECTOR DE IDIOMA === */
+.lang-selector {
+  margin-left: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #F5E9D2;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.lang-selector:hover {
+  background: rgba(255, 255, 255, 0.18);
+}

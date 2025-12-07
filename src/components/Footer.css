@@ -1,0 +1,144 @@
+/* === FOOTER LEGAL + INSTITUCIONAL PREMIUM === */
+
+.footer {
+  background: linear-gradient(
+    150deg,
+    #100A17,
+    #140C20,
+    #1A102C,
+    #100A17
+  );
+  color: #F5E9D2; /* crema corporativa */
+  padding-top: 50px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: "IBM Plex Sans", sans-serif;
+  padding-bottom: 0;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 50px 40px;
+}
+
+/* COLUMNAS */
+.footer-col {
+  width: 230px;
+  margin-bottom: 25px;
+}
+
+.footer-logo {
+  font-size: 20px;
+  font-weight: 700;
+  font-family: "Manrope", sans-serif;
+  margin-bottom: 10px;
+  color: #F5E9D2;
+}
+
+.footer-desc {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+/* CONTACTO */
+.footer-contact span {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+/* TITULOS DE COLUMNA */
+.footer-col h4 {
+  font-size: 16px;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: #F5E9D2;
+}
+
+/* LINKS */
+.footer-col a {
+  display: block;
+  font-size: 14px;
+  color: #EBDCC4;
+  margin: 5px 0;
+  text-decoration: none;
+  transition: 0.25s;
+}
+
+/* Hover naranja MUY oscuro */
+.footer-col a:hover {
+  color: #A04D17;
+}
+
+/* BARRA LEGAL INFERIOR */
+.footer-legal {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+  padding: 18px 0;
+  font-size: 13px;
+  opacity: 0.85;
+  line-height: 1.6;
+  background: rgba(0,0,0,0.15);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .footer-col {
+    width: 100%;
+  }
+}
+
+/* ==== INSTAGRAM HIGHLIGHT GLOBAL ==== */
+
+.ig-highlight,
+.ig-highlight-nos,
+.contact-ig-box {
+  margin-top: 22px;
+  margin-bottom: 10px;
+  padding: 16px 20px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 12px rgba(160, 77, 23, 0.25);
+  text-align: left;
+}
+
+.ig-title {
+  font-size: 14px;
+  opacity: 0.85;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.ig-button,
+.contact-ig-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 16px;
+  background: linear-gradient(120deg, #ff8d50, #caa2ff);
+  border-radius: 10px;
+  color: #0a0a0a;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  transition: 0.3s ease;
+}
+
+.ig-button:hover,
+.contact-ig-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(255, 140, 70, 0.45);
+}
+
+.ig-icon {
+  margin-right: 5px;
+}

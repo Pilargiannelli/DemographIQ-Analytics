@@ -1,0 +1,208 @@
+/* === SECCIÓN CASOS — FONDO OSCURO ANIMADO === */
+
+.casos-section {
+  padding: 40px 60px 100px;
+  margin-top: 0;
+  padding-top: 40px;
+
+
+  background-size: 300% 300%;
+  animation: bgFlow 16s ease-in-out infinite;
+
+  color: #F5E9D2;
+
+  /* ELIMINAR LA LÍNEA QUE CORTA VISUALMENTE */
+  border-top: none;
+}
+
+/* Animación del fondo */
+@keyframes bgFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Títulos */
+.casos-title {
+  text-align: center;
+  font-size: 38px;
+  font-weight: 700;
+  font-family: "Manrope", sans-serif;
+  margin-bottom: 15px;
+}
+
+.casos-subtitle {
+  text-align: center;
+  font-size: 18px;
+  opacity: 0.85;
+  max-width: 900px;
+  margin: 0 auto 70px;
+}
+
+/* === FILAS ALTERNADAS === */
+
+.caso-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 90px;
+  gap: 40px;
+}
+
+/* PANEL LATERAL MEJORADO */
+.caso-panel {
+  width: 45%;
+  height: 260px;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #2E2560, #0D0711);
+  border: 1.5px solid rgba(255, 255, 255, 0.10);
+  animation: panelFloat 5s ease-in-out infinite;
+  box-shadow: 0px 6px 20px rgba(0,0,0,0.45);
+}
+
+@keyframes panelFloat {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Texto */
+.caso-text {
+  width: 50%;
+}
+
+.caso-text h3 {
+  font-size: 26px;
+  margin-bottom: 15px;
+  font-family: "Manrope", sans-serif;
+  color: #F5E9D2;
+}
+
+.caso-text p {
+  font-size: 16px;
+  opacity: 0.9;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.caso-text ul li {
+  margin: 6px 0;
+  font-size: 15px;
+  color: #FF9A55; 
+  font-weight: 600;
+}
+
+/* Alternancia */
+.caso-row.right {
+  flex-direction: row-reverse;
+}
+
+.caso-row.left {
+  flex-direction: row;
+}
+
+/* Responsive */
+@media(max-width: 1000px) {
+  .caso-row {
+    flex-direction: column;
+  }
+  
+  .caso-panel,
+  .caso-text {
+    width: 100%;
+  }
+}
+
+/* === TÍTULO ANIMADO PREMIUM === */
+.casos-title {
+  text-align: center;
+  font-size: 44px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  font-family: "Manrope", sans-serif;
+
+  background: linear-gradient(
+    120deg,
+    #F5E9D2,
+    #C7B6F2,
+    #8C6DD8,
+    #A04D17,
+    #F5E9D2
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: titleFlow 6s ease-in-out infinite;
+}
+
+/* Animación elegante del título */
+@keyframes titleFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ... [MANTENER TODO EL CSS ANTERIOR, INCLUYENDO .caso-panel y @keyframes panelFloat] ... */
+
+
+
+/* === ESTILOS PARA LOS LOGOS EN LOS PANELES === */
+
+/* Estilo Base para los Paneles con Imagen */
+.caso-logo-1,
+.caso-logo-2,
+.caso-logo-3,
+.caso-logo-4,
+.caso-logo-5 {
+    /* 1. Anular el fondo de gradiente y la animación */
+    background: #0D0711; /* Fondo sólido oscuro para una base limpia */
+    animation: none;
+    
+    /* 2. Propiedades de la imagen de fondo */
+    background-size: 100%; /* Tamaño del logo: se ajustará al 60% del panel */
+    background-repeat: no-repeat;
+    background-position: center; /* Centrar el logo */
+    
+    /* 3. Ajustar el borde para que se vea como una card */
+    border: 1.5px solid rgba(255, 255, 255, 0.15); 
+}
+
+/* 1. Ministerio de Planificación - Brasil */
+.caso-logo-1 {
+    background-image: url('../assets/BraLEO.jpg'); /* REEMPLAZAR RUTA */
+}
+
+/* 2. YPF – Argentina */
+.caso-logo-2 {
+    background-image: url('../assets/YPFLEO.jpg'); /* REEMPLAZAR RUTA */
+}
+
+/* 3. Universidad de la República – Uruguay */
+.caso-logo-3 {
+    background-image: url('../assets/uruLEO.jpg'); /* REEMPLAZAR RUTA */
+}
+
+/* 4. Ministerio de Economía – Paraguay */
+.caso-logo-4 {
+    background-image: url('../assets/ecoParagLEO.jpg'); /* REEMPLAZAR RUTA */
+}
+
+/* 5. FoodChain SA – Retail MERCOSUR */
+.caso-logo-5 {
+    background-image: url('../assets/foodchainLEO.jpg'); /* REEMPLAZAR RUTA */
+}
+
+/* === RESPONSIVE (OPCIONAL: Asegurar que se vean bien en móviles) === */
+@media(max-width: 1000px) {
+  /* ... (código responsive anterior) ... */
+
+  /* En móvil, aumentamos el tamaño del logo para que sea visible */
+  .caso-logo-1,
+  .caso-logo-2,
+  .caso-logo-3,
+  .caso-logo-4,
+  .caso-logo-5 {
+      background-size: 40%; /* Un poco más pequeño para no saturar */
+  }
+}
