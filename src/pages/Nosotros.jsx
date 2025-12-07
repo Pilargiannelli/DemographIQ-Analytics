@@ -38,25 +38,25 @@ export default function Nosotros() {
         <div className="equipo-grid">
 
           <div className="equipo-card">
-            <img src="../src/assets/equipo/pili.jpg" className="foto" />
+            <img src={piliFoto} className="foto" />
             <h3 className="equipo-nombre">Pilar Giannelli</h3>
             <p className="equipo-puesto">{t("about.role_strategy")}</p>
           </div>
 
           <div className="equipo-card">
-            <img src="../src/assets/equipo/berni.jpg" className="foto" />
+            <img src={berniFoto} className="foto" />
             <h3 className="equipo-nombre">Bernardo La Gioiosa</h3>
             <p className="equipo-puesto">{t("about.role_executive")}</p>
           </div>
 
           <div className="equipo-card">
-            <img src="../src/assets/equipo/tomi.jpg" className="foto" />
+            <img src={tomiFoto} className="foto" />
             <h3 className="equipo-nombre">Tomás Terruli</h3>
             <p className="equipo-puesto">{t("about.role_tech")}</p>
           </div>
 
           <div className="equipo-card">
-            <img src="../src/assets/equipo/marti.jpg" className="foto" />
+            <img src={martiFoto} className="foto" />
             <h3 className="equipo-nombre">Martina Castellani</h3>
             <p className="equipo-puesto">{t("about.role_ops")}</p>
           </div>
