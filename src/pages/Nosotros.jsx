@@ -50,7 +50,7 @@ export default function Nosotros() {
 
           <div className="equipo-card">
             <img src={berniFoto} className="foto" />
-            <h3 className="equipo-nombre">Bernardo La Gioiosa</h3>
+            <h3 className="equipo-nombre">Bernardita La Gioiosa</h3>
             <p className="equipo-puesto">{t("about.role_executive")}</p>
           </div>
 
