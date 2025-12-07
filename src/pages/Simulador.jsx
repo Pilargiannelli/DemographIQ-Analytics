@@ -389,49 +389,49 @@ export default function Simulador() {
       </div>
 
       {/* ===============================================
-          NUEVA CARD DE ANÁLISIS (NO MODIFICA NADA)
-      =============================================== */}
-      <div className="analysis-wrapper">
-        <div className="analysis-card">
-          <h2 className="analysis-title">📊 Análisis de Crecimiento Poblacional</h2>
+    NUEVA CARD DE ANÁLISIS — TRADUCIDA A 3 IDIOMAS
+================================================ */}
+<div className="analysis-wrapper">
+  <div className="analysis-card">
+    <h2 className="analysis-title">{t("analysis.title")}</h2>
 
-          {resultadosCrec.length === 0 ? (
-            <p>No hay datos para mostrar.</p>
-          ) : (
-            <table className="analysis-table">
-              <thead>
-                <tr>
-                  <th>País</th>
-                  <th>Población {anioInicio}</th>
-                  <th>Población {anioFin}</th>
-                  <th>Crec. Absoluto</th>
-                  <th>Crec. %</th>
-                </tr>
-              </thead>
+    {resultadosCrec.length === 0 ? (
+      <p>{t("analysis.noData")}</p>
+    ) : (
+      <table className="analysis-table">
+        <thead>
+          <tr>
+            <th>{t("analysis.country")}</th>
+            <th>{t("analysis.startPop")} {anioInicio}</th>
+            <th>{t("analysis.endPop")} {anioFin}</th>
+            <th>{t("analysis.absGrowth")}</th>
+            <th>{t("analysis.pctGrowth")}</th>
+          </tr>
+        </thead>
 
-              <tbody>
-                {resultadosCrec.map((row) => (
-                  <tr key={row.pais}>
-                    <td>{row.pais}</td>
-                    <td>{row.inicio?.toLocaleString() ?? "-"}</td>
-                    <td>{row.fin?.toLocaleString() ?? "-"}</td>
-                    <td>{row.crecimientoAbs?.toLocaleString() ?? "-"}</td>
-                    <td
-                      className={
-                        row.crecimientoAbs >= 0
-                          ? "growth-positive"
-                          : "growth-negative"
-                      }
-                    >
-                      {row.crecimientoPct.toFixed(2)}%
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          )}
-        </div>
-      </div>
+        <tbody>
+          {resultadosCrec.map((row) => (
+            <tr key={row.pais}>
+              <td>{row.pais}</td>
+              <td>{row.inicio?.toLocaleString() ?? "-"}</td>
+              <td>{row.fin?.toLocaleString() ?? "-"}</td>
+              <td>{row.crecimientoAbs?.toLocaleString() ?? "-"}</td>
+              <td
+                className={
+                  row.crecimientoAbs >= 0
+                    ? "growth-positive"
+                    : "growth-negative"
+                }
+              >
+                {row.crecimientoPct.toFixed(2)}%
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    )}
+  </div>
+</div>
 
     </div>
   );

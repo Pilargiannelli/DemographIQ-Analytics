@@ -281,7 +281,17 @@
   "about": "DemographIQ Analytics | Sobre nós",
   "contact": "DemographIQ Analytics | Contato",
   "pricing": "DemographIQ Analytics | Preços"
+},
+"analysis": {
+  "title": "📊 Análise de Crescimento Populacional",
+  "noData": "Nenhum dado disponível.",
+  "country": "País",
+  "startPop": "População em",
+  "endPop": "População em",
+  "absGrowth": "Crescimento Absoluto",
+  "pctGrowth": "Crescimento %"
 }
+
 
 
 
